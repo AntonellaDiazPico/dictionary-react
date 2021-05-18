@@ -36,6 +36,7 @@ export default function SearchEngine() {
     );
   } else {
     return (
+      //NEED TO FIND A SOLUTION FOR MISSPELLED WORDS YET
       <div className="SearchEngine">
         <form onSubmit={handleSubmit}>
           <input type="search" onChange={handleQuery} className="searchForm" />
