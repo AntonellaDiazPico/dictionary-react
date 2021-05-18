@@ -1,5 +1,6 @@
 import SearchEngine from "./SearchEngine";
 import "./App.css";
+import Footer from "./Footer";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
           {/* <img src={dictionaryArtClip} className="header-img" alt="logo"/> */}
         </header>
         <SearchEngine />
+        <Footer />
       </div>
     </div>
   );
