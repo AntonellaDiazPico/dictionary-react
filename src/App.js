@@ -9,7 +9,7 @@ export default function App() {
         <header>
           {/* <img src={dictionaryArtClip} className="header-img" alt="logo"/> */}
         </header>
-        <SearchEngine />
+        <SearchEngine defaultQuery="beer" />
         <Footer />
       </div>
     </div>

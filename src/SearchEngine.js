@@ -3,21 +3,26 @@ import axios from "axios";
 import "./SearchEngine.css";
 import Outcome from "./Outcome";
 
-export default function SearchEngine() {
+export default function SearchEngine(props) {
   const [ready, setReady] = useState(false);
-  const [query, setQuery] = useState(null);
+  const [query, setQuery] = useState(props.defaultQuery);
   const [outcome, setOutcome] = useState(null);
 
+
+  function search() {
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${query}`;
+    axios.get(apiUrl).then(handleResponse);
+
+  }
+
   function handleResponse(response) {
-    // console.log(response.data[0]);
     setOutcome(response.data[0]);
     setReady(true);
   }
 
-  function handleSubmit(event) {
+    function handleSubmit(event) {
     event.preventDefault();
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${query}`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
   }
 
   function handleQuery(event) {
@@ -35,13 +40,9 @@ export default function SearchEngine() {
       </div>
     );
   } else {
+    search();
     return (
-      //NEED TO FIND A SOLUTION FOR MISSPELLED WORDS YET
-      <div className="SearchEngine">
-        <form onSubmit={handleSubmit}>
-          <input type="search" onChange={handleQuery} className="searchForm" />
-        </form>
-      </div>
+      "loading"
     );
   }
 }
