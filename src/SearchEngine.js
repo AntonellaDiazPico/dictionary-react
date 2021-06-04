@@ -8,11 +8,9 @@ export default function SearchEngine(props) {
   const [query, setQuery] = useState(props.defaultQuery);
   const [outcome, setOutcome] = useState(null);
 
-
   function search() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${query}`;
     axios.get(apiUrl).then(handleResponse);
-
   }
 
   function handleResponse(response) {
@@ -20,7 +18,7 @@ export default function SearchEngine(props) {
     setReady(true);
   }
 
-    function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
     search();
   }
@@ -32,17 +30,25 @@ export default function SearchEngine(props) {
 
   if (ready) {
     return (
-      <div className="SearchEngine">
-        <form onSubmit={handleSubmit}>
-          <input type="search" onChange={handleQuery} className="searchForm" />
-        </form>
-        <Outcome outcome={outcome} />
-      </div>
+
+        <div className="SearchEngine">
+          <section className="main-section">
+            <h6>What word do you want to look up?</h6>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="search"
+              onChange={handleQuery}
+              className="searchForm"
+              placeholder={props.defaultQuery}
+            />
+          </form>
+          </section>
+          <Outcome outcome={outcome} />
+        </div>
+
     );
   } else {
     search();
-    return (
-      "loading"
-    );
+    return "loading";
   }
 }

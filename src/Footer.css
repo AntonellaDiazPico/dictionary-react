@@ -1,5 +1,21 @@
-.Footer {
-    font-size: 12px;
-    margin-top: 100px;
-    text-align: center;
+.Footer footer {
+  font-size: 12px;
+  font-family: "Damion", cursive;
+  margin-top: 100px;
+  text-align: center;
+  color: #777;
+}
+
+.open-source-div {
+  text-align: center;
+  font-size: 11px;
+}
+
+.Footer a {
+  text-decoration: none;
+  color: #777;
+}
+
+.Footer a:hover {
+  color: rgb(206, 112, 128);
 }

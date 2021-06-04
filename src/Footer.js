@@ -4,12 +4,17 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className="Footer">
-      Coded by{" "}
-      <a href="https://github.com/AntonellaDiazPico/dictionary-react">
-        Antonella Diaz Pico
-      </a>{" "}
-      and hosted on{" "}
-      <a href="https://frosty-mirzakhani-92ddb4.netlify.app/">Netlify</a>
+    <footer>Coded by Antonella Diaz Pico</footer>
+    <div className="open-source-div">
+      <a
+        href="https://github.com/AntonellaDiazPico/dictionary-react"
+        target="_blank"
+        rel="noreferrer"
+        className="open-source-link"
+      >
+        Open-source code
+      </a>
     </div>
+  </div>
   );
 }

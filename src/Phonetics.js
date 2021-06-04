@@ -1,4 +1,7 @@
 import React from "react";
+import "./Phonetics.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
 export default function Phonetics(props) {
   console.log(props.phonetics);
@@ -8,9 +11,8 @@ export default function Phonetics(props) {
         return (
             <div key={index}>
                 <a href={phonetic.audio} target="_blank" rel="noreferrer">
-                    Listen Symbol here
+                <FontAwesomeIcon icon={faPlay} />
                 </a>
-                <br />
                 {phonetic.text}
             </div>
 
