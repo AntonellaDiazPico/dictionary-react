@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
 export default function Phonetics(props) {
-  console.log(props.phonetics);
+  // console.log(props.phonetics);
   return (
     <div className="Phonetics">
       {props.phonetics.map(function (phonetic, index) {
