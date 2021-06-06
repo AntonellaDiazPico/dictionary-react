@@ -3,6 +3,7 @@ import axios from "axios";
 import "./SearchEngine.css";
 import Outcome from "./Outcome";
 import Photos from "./Photos";
+import Loader from "react-loader-spinner";
 
 export default function SearchEngine(props) {
   const [ready, setReady] = useState(false);
@@ -62,6 +63,15 @@ export default function SearchEngine(props) {
     );
   } else {
     search();
-    return "loading";
+    return (
+    <div className="loader">
+        <Loader
+          type="ThreeDots"
+          color="#e39ba7"
+          height={100}
+          width={100}
+        />
+      </div>
+    );
   }
 }
