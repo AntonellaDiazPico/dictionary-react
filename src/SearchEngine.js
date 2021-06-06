@@ -15,6 +15,7 @@ export default function SearchEngine(props) {
   }
 
   function handleDictionaryResponse(response) {
+    console.log(response);
     setOutcome(response.data[0]);
     setReady(true);
 

@@ -4,7 +4,7 @@ import Phonetics from "./Phonetics";
 import "./Outcome.css";
 
 export default function Outcome(props) {
-  // console.log(props.outcome);
+  
   return (
     <div className="Outcome">
       <section className="main-section">
@@ -22,4 +22,4 @@ export default function Outcome(props) {
       })}
     </div>
   );
-}
+    } 
